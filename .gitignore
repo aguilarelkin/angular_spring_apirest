@@ -1,0 +1,79 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/my-app/dist
+/my-app/tmp
+/my-app/out-tsc
+/my-app/bazel-out
+
+# Node
+/my-app/node_modules
+/my-app/npm-debug.log
+/my-app/yarn-error.log
+
+# IDEs and editors
+/my-app/.idea/
+/my-app/.project
+/my-app/.classpath
+/my-app/.c9/
+/my-app/*.launch
+/my-app/.settings/
+/my-app/*.sublime-workspace
+
+# Visual Studio Code
+/my-app/.vscode/*
+/my-app/!.vscode/settings.json
+/my-app/!.vscode/tasks.json
+/my-app/!.vscode/launch.json
+/my-app/!.vscode/extensions.json
+/my-app/.history/*
+
+# Miscellaneous
+/my-app/.angular/cache
+/my-app/.sass-cache/
+/my-app/connect.lock
+/my-app/coverage
+/my-app/libpeerconnection.log
+/my-app/testem.log
+/my-app/typings
+
+# System files
+/my-app/.DS_Store
+/my-app/Thumbs.db
+
+###################spring
+
+/basicclient/HELP.md
+/basicclient/target/
+/basicclient/!.mvn/wrapper/maven-wrapper.jar
+/basicclient/!**/src/main/**/target/
+/basicclient/!**/src/test/**/target/
+
+### STS ###
+/basicclient/.apt_generated
+/basicclient/.classpath
+/basicclient/.factorypath
+/basicclient/.project
+/basicclient/.settings
+/basicclient/.springBeans
+/basicclient/.sts4-cache
+
+### IntelliJ IDEA ###
+/basicclient/.idea
+/basicclient/*.iws
+/basicclient/*.iml
+/basicclient/*.ipr
+
+### NetBeans ###
+/basicclient/nbproject/private/
+/basicclient/nbbuild/
+/basicclient/dist/
+/basicclient/nbdist/
+/basicclient/.nb-gradle/
+/basicclient/build/
+/basicclient/!**/src/main/**/build/
+/basicclient/!**/src/test/**/build/
+
+### VS Code ###
+/basicclient/.vscode/
+
