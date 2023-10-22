@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>IMAGEN</th>
+            <th>DESCRIPTION</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of motos">
+            <td>{{data.id}} </td>
+            <td> {{data.nombre}} </td>
+            <td> {{data.image}} </td>
+            <td> {{data.description}} </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,7 @@
+<button class="p-2 text-sm bg-blue-800 rounded-full"
+    (click)="setHabilitar()">{{getHabilitar()}}</button>
+<div>
+    <ul *ngIf="habilitar">
+        <li *ngFor="let data of listData">{{data}}</li>
+    </ul>
+</div>
