@@ -8,11 +8,18 @@ import { DataServerComponent } from './data-server/data-server.component';
 import { VmotoComponent } from './vmoto/vmoto.component';
 import { VmotoService } from './vmoto/vmoto.service';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormComponent } from './vmoto/form.component';
+import { FormsModule } from '@angular/forms'
 
 const routes: Routes = [
   { path: '', redirectTo: '/vmoto', pathMatch: 'full' },
   { path: 'vmoto', component: VmotoComponent },
-  { path: 'data', component: DataServerComponent }
+  { path: 'data', component: DataServerComponent },
+  { path: 'create', component: FormComponent },
+  { path: 'create/:id', component: FormComponent }
+
+
 
 ];
 
@@ -22,11 +29,14 @@ const routes: Routes = [
     NavComponent,
     FooterComponent,
     DataServerComponent,
-    VmotoComponent
+    VmotoComponent,
+    FormComponent
 
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   //service

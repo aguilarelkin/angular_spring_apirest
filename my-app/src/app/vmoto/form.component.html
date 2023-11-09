@@ -1,0 +1,35 @@
+<div>
+    <div>{{title}}</div>
+
+    <div>
+        <form>
+            <div>
+                <label for="name">Name</label>
+                <div>
+                    <input type="text" [(ngModel)]="vmoto.name" name="name">
+                </div>
+            </div>
+
+            <div>
+                <label for="image">Image</label>
+                <div>
+                    <input type="text" [(ngModel)]="vmoto.image" name="image">
+                </div>
+            </div>
+
+            <div>
+                <label for="description">Description</label>
+                <div>
+                    <input type="text" [(ngModel)]="vmoto.description" name="description">
+                </div>
+            </div>
+            <div>
+                <button role="button" (click)="create()" *ngIf="!vmoto.id else elseBlock">Crear</button>
+
+                <ng-template #elseBlock>
+                    <button role="button" (click)="update()">Editar</button> 
+                </ng-template>
+            </div>
+        </form>
+    </div>
+</div>

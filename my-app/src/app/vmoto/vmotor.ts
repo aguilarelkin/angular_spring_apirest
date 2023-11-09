@@ -1,6 +1,7 @@
 export class Vmotor {
     id!: number;
-    nombre!: string;
+    name!: string;
     image!: string;
     description!: string;
 }
+//12

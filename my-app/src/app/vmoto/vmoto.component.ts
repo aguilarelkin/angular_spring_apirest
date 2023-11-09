@@ -19,4 +19,10 @@ export class VmotoComponent implements OnInit {
   );
   }
 
+  delete(vmoto: Vmotor): void {
+    this.motos = this.motos.filter(vm => vm !== vmoto)
+    this.vmotoService.delete(vmoto.id).subscribe(
+      respo => alert(`Moto eliminada ${vmoto.id}`)
+    )
+  }
 }
