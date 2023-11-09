@@ -1,33 +1,59 @@
 <div>
+    <ul *ngIf="errores.length > 0">
+        <li *ngFor="let err of errores">
+            {{err}}
+        </li>
+    </ul>
+
     <div>{{title}}</div>
 
     <div>
-        <form>
+        <form #vmotoForm="ngForm">
             <div>
                 <label for="name">Name</label>
                 <div>
-                    <input type="text" [(ngModel)]="vmoto.name" name="name">
+                    <input type="text" [(ngModel)]="vmoto.name" name="name"  #name="ngModel">
+                    <!--                     <div *ngIf="name.invalid && (name.dirty || name.touched )">
+                        <div *ngIf="name.errors.required">
+                            Name es requerido
+                        </div>
+                        <div *ngIf="name.errors.minlength">
+                            Name debe tener mínimo 3 caracteres
+                        </div>
+                    </div> -->
                 </div>
             </div>
 
             <div>
                 <label for="image">Image</label>
                 <div>
-                    <input type="text" [(ngModel)]="vmoto.image" name="image">
+                    <input type="text" [(ngModel)]="vmoto.image" name="image"  #image="ngModel">
+                    <!--                     <div *ngIf="image.invalid && (image.dirty ||image.touched )">
+                        <div *ngIf="image.errors.required">
+                            Image es requerido
+                        </div>
+                    </div> -->
                 </div>
             </div>
 
             <div>
                 <label for="description">Description</label>
                 <div>
-                    <input type="text" [(ngModel)]="vmoto.description" name="description">
+                    <input type="text" [(ngModel)]="vmoto.description" name="description" 
+                        #description="ngModel">
+                    <!--                     <div *ngIf="description.invalid && (description.dirty ||description.touched )">
+                        <div *ngIf="description.errors.required">
+                            Name es requerido
+                        </div>
+                    </div> -->
                 </div>
             </div>
             <div>
-                <button role="button" (click)="create()" *ngIf="!vmoto.id else elseBlock">Crear</button>
+                <button role="button" (click)="create()" *ngIf="!vmoto.id else elseBlock"
+                    [disabled]="!vmotoForm.form.valid">Crear</button>
 
                 <ng-template #elseBlock>
-                    <button role="button" (click)="update()">Editar</button> 
+                    <button role="button" (click)="update()" [disabled]="!vmotoForm.form.valid">Editar</button>
                 </ng-template>
             </div>
         </form>

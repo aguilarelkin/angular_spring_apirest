@@ -11,6 +11,7 @@ export class FormComponent implements OnInit {
 
   protected vmoto: Vmotor = new Vmotor()
   protected title: string = "VMOTORS CREATE"
+  protected errores: string[] = [];
 
   constructor(private vmotoService: VmotoService, private router: Router, private activatedRoute: ActivatedRoute) {
 
@@ -31,17 +32,23 @@ export class FormComponent implements OnInit {
   }
   create(): void {
     this.vmotoService.create(this.vmoto).subscribe(
-      response => {
+      vmoto => {
         this.router.navigate(["/vmoto"])
-        alert(`Moto creado ${this.vmoto.name}`)
+        alert(`El moto ${vmoto.name} ha sido creado con éxito`)
+      }, 
+      err =>{
+        this.errores = err.error.errors as string[];
       }
     )
   }
   update(): void {
     this.vmotoService.update(this.vmoto).subscribe(
-      response => {
+      json => {
         this.router.navigate(["/vmoto"])
-        alert(`Moto actualizada ${this.vmoto.name}`)
+        alert(`${json.response} : ${json.vmoto.name}`)
+      }, 
+      err =>{
+        this.errores = err.error.errors as string[];
       }
     )
   }
